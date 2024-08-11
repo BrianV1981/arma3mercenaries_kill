@@ -120,8 +120,8 @@ addMissionEventHandler ["entityKilled", {
     // If the instigator is null (e.g., road kill), set the killer as the instigator
     if (isNull _instigator) then { _instigator = _killer };
 
-    // Check if the instigator is local to the machine, the killer is a player, and the killed unit is a human-like unit
-    if (local _instigator && isPlayer _instigator && _killed isKindOf "CAManBase") then {
+    // Check if the instigator is local to the machine and the killed unit is a human-like unit
+    if (local _instigator && _killed isKindOf "CAManBase") then {
         // Determine the sides of the killer and the killed unit
         private _sideKiller = getNumber (configFile >> "cfgVehicles" >> typeOf _instigator >> "side");
         private _sideKilled = getNumber (configFile >> "cfgVehicles" >> typeOf _killed >> "side");
@@ -153,8 +153,8 @@ addMissionEventHandler ["entityKilled", {
             _pictureweapon = getText(configFile >> "CfgVehicles" >> _weaponClass >> "picture");
         };
 
-        // Get a readable name for the killer's faction
-        private _killerFactionName = switch (_sideKiller) do {
+        // Get a readable name for the faction
+        private _factionName = switch (_sideKilled) do {
             case 0: { "OPFOR" };
             case 1: { "NATO" };
             case 2: { "Independent" };
@@ -168,7 +168,7 @@ addMissionEventHandler ["entityKilled", {
             [_instigator, -10000, true] call grad_moneymenu_fnc_addFunds;
 
             // Send a hint to the instigator about the friendly fire
-            private _message = format ["You killed a member of %1! 10,000 cr. has been deducted from your bank account.", _killerFactionName];
+            private _message = format ["You killed a member of %1! 10,000 cr. has been deducted from your bank account.", _factionName];
             [_message] remoteExec ["hintSilent", _instigator];
         };
 
@@ -190,8 +190,10 @@ addMissionEventHandler ["entityKilled", {
                 [_instigator, random 10000] call grad_moneymenu_fnc_addFunds;
 
                 // If the instigator is a player, send them a hint about the reward
-                private _message = format ["You killed a member of %1, good job! 0-10,000 cr. has been added to your wallet. Don't forget to check the corpse for more money!", _killerFactionName];
-                [_message] remoteExec ["hintSilent", _instigator];
+                if (isPlayer _instigator) then {
+                    private _message = format ["You killed a member of %1, good job! 0-10,000 cr. has been added to your wallet. Don't forget to check the corpse for more money!", _factionName];
+                    [_message] remoteExec ["hintSilent", _instigator];
+                };
 
                 // Add a random amount up to 10,000 credits to the wallet of the killed OPFOR AI unit
                 if (!isPlayer _killed) then {
@@ -206,8 +208,10 @@ addMissionEventHandler ["entityKilled", {
                     [_instigator, random 10000] call grad_moneymenu_fnc_addFunds;
 
                     // If the instigator is a player, send them a hint about the reward
-                    private _message = format ["You killed a member of %1, good job! 0-10,000 cr. has been added to your wallet.", _killerFactionName];
-                    [_message] remoteExec ["hintSilent", _instigator];
+                    if (isPlayer _instigator) then {
+                        private _message = format ["You killed a member of %1, good job! 0-10,000 cr. has been added to your wallet.", _factionName];
+                        [_message] remoteExec ["hintSilent", _instigator];
+                    };
                 };
 
                 // Ensure that every time a NATO AI is killed, they receive 1,000 random credits in their wallet
@@ -223,16 +227,20 @@ addMissionEventHandler ["entityKilled", {
                     [_instigator, random 10000] call grad_moneymenu_fnc_addFunds;
 
                     // If the instigator is a player, send them a hint about the reward
-                    private _message = format ["You killed a member of %1, good job! 0-10,000 cr. has been added to your wallet.", _killerFactionName];
-                    [_message] remoteExec ["hintSilent", _instigator];
+                    if (isPlayer _instigator) then {
+                        private _message = format ["You killed a member of %1, good job! 0-10,000 cr. has been added to your wallet.", _factionName];
+                        [_message] remoteExec ["hintSilent", _instigator];
+                    };
                 } else {
                     // NATO killed Independent (NATO allied)
                     // Penalty: Deduct 10,000 credits from the instigator's bank account
                     [_instigator, -10000, true] call grad_moneymenu_fnc_addFunds;
 
                     // If the instigator is a player, send them a hint about the penalty
-                    private _message = format ["You killed a member of %1! 10,000 cr. has been deducted from your bank account.", _killerFactionName];
-                    [_message] remoteExec ["hintSilent", _instigator];
+                    if (isPlayer _instigator) then {
+                        private _message = format ["You killed a member of %1! 10,000 cr. has been deducted from your bank account.", _factionName];
+                        [_message] remoteExec ["hintSilent", _instigator];
+                    };
                 };
 
                 // Add a random amount up to 1,000 credits to the wallet of the killed Independent AI unit
@@ -246,8 +254,10 @@ addMissionEventHandler ["entityKilled", {
                 [_instigator, -10000, true] call grad_moneymenu_fnc_addFunds;
 
                 // If the instigator is a player, send them a hint about the penalty
-                private _message = format ["You killed a member of %1! 10,000 cr. has been deducted from your bank account.", _killerFactionName];
-                [_message] remoteExec ["hintSilent", _instigator];
+                if (isPlayer _instigator) then {
+                    private _message = format ["You killed a member of %1! 10,000 cr. has been deducted from your bank account.", _factionName];
+                    [_message] remoteExec ["hintSilent", _instigator];
+                };
 
                 // Add a random amount up to 1,000 credits to the wallet of the killed Civilian AI unit
                 if (!isPlayer _killed) then {
@@ -256,13 +266,13 @@ addMissionEventHandler ["entityKilled", {
             };
         };
 
-        // Killfeed HUD Notification - Only trigger if the instigator is the local player and a non-AI player made the kill
-        if (isPlayer _instigator && local _instigator) then {
+        // Killfeed HUD Notification and Sound
+        if (isPlayer _instigator) then {
             _kill_HUD = format["<t size='0.3'>  Killed  <t size='0.5'> <t color='%1'>  %2  <t color='#%1'>  %3 m</t>", _killed_Color, _killed_Name, floor _distance];
             [_kill_HUD, 0, 0, 8, 1, -1, 7017] spawn bis_fnc_dynamicText;
 
             // Play a sound notification
-            playSound "Kill_notification";
+            playSound "Killfeed_notification";
         };
 
         // AI Death Marker - Only if the killer is a player
@@ -309,8 +319,8 @@ addMissionEventHandler ["entityKilled", {
             _m setMarkerColor "ColorRed";
             // Set the size of the marker
             _m setMarkerSize [0.5, 0.5];
-            // Set the text of the marker to include the killer's faction, weapon used, and distance
-            _m setMarkerText format ["%1 killed by %2 with a %3 from %4m", name _killed, _killerFactionName, _weaponDisplayName, floor _distance];
+            // Set the text of the marker to the player's name
+            _m setMarkerText name _killed;
         };
     };
 
