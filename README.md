@@ -1,3 +1,70 @@
+# Enhanced Version Features
+
+# **arma3mercenaries Enhanced Kill Script: Kill Notification, Kill Reward, & Death Marker System**
+
+## **Overview**
+The `arma3mercenaries Enhanced Kill Script` provides comprehensive features for managing kill notifications (killfeed), rewards, penalties, and death markers in Arma 3 missions. The script supports a wide range of customizable options via CBA (Community Base Addons), enabling players and mission creators to tailor the experience to their needs.
+
+## **Core Features**
+
+### **Killfeed Notification**
+- **Description**: Displays a HUD notification for every kill, showing the name and distance of the killed unit.
+- **CBA Settings**:
+  - **Enable Killfeed**: Toggles the display of the killfeed notification.
+  - **Killfeed Display Duration**: Adjusts the duration (in seconds) that the killfeed notification remains on screen.
+  - **Enable Kill Notification Sound**: Toggles the sound notification that plays when a kill is registered.
+
+### **Rewards and Penalties**
+- **Friendly Fire Penalty**:
+  - **Description**: Deducts a specified amount of credits from the player’s bank account for friendly fire incidents.
+  - **CBA Settings**:
+    - **Friendly Fire Penalty (Bank)**: Sets the amount of credits deducted for friendly fire incidents.
+- **Friendly Fire Compensation**:
+  - **Description**: Awards a specified amount of credits to a player killed by friendly fire. Credits are added to the player’s bank account.
+  - **CBA Settings**:
+    - **Friendly Fire Compensation (Bank)**: Sets the amount of credits awarded to a player when killed by friendly fire.
+- **Kill Rewards**:
+  - **Description**: Awards a random amount of credits to the killer for killing enemy units.
+  - **CBA Settings**:
+    - **OPFOR Kill Reward (Random, Wallet)**: Sets the maximum random amount of credits awarded for killing an OPFOR unit.
+    - **NATO Kill Reward (Random, Wallet)**: Sets the maximum random amount of credits awarded for killing a NATO unit.
+    - **Independent Kill Reward (Random, Wallet)**: Sets the maximum random amount of credits awarded for killing an Independent unit.
+- **Kill Penalties**:
+  - **Description**: Deducts a specified amount of credits from the killer’s bank account for killing certain units, such as civilians or allied Independents.
+  - **CBA Settings**:
+    - **NATO Penalty for Killing Independent (Bank)**: Sets the amount of credits deducted for killing an Independent unit as NATO.
+    - **Civilian Kill Penalty (Bank)**: Sets the amount of credits deducted for killing a civilian.
+
+### **AI Wallet Management**
+- **Description**: Adds a random amount of credits to the wallets of killed AI units, making them lootable.
+- **CBA Settings**:
+  - **OPFOR AI Wallet Amount (Random, Wallet)**: Sets the maximum random amount of credits found on a killed OPFOR AI unit.
+  - **NATO AI Wallet Amount (Random, Wallet)**: Sets the maximum random amount of credits found on a killed NATO AI unit.
+  - **Independent AI Wallet Amount (Random, Wallet)**: Sets the maximum random amount of credits found on a killed Independent AI unit.
+  - **Civilian AI Wallet Amount (Random, Wallet)**: Sets the maximum random amount of credits found on a killed Civilian AI unit.
+
+### **Death Markers**
+- **Description**: Creates markers on the map at the location where a player or AI unit was killed. The marker includes the faction, killer’s name, weapon used, and the distance.
+- **CBA Settings**:
+  - **Death Marker Size**: Sets the size of the death markers on the map.
+
+### **Death Penalty**
+- **Description**: Deducts a specified amount of credits from the player's bank account upon death.
+- **CBA Settings**:
+  - **Death Penalty Amount (Bank)**: Sets the amount of credits deducted when the player dies.
+
+### **Silent Hints**
+- **Description**: Provides notifications related to rewards and penalties without disrupting gameplay with loud hints.
+- **CBA Settings**:
+  - **Enable Silent Hints**: Toggles the display of silent hints related to kill rewards and penalties.
+
+## **In-Game Experience**
+- **Immersive Feedback**: Players receive immediate visual and audio feedback for their kills and deaths, enhancing the tactical experience.
+- **Customization**: With the extensive CBA settings, mission creators and players can fine-tune how the script interacts with their gameplay, including adjusting rewards, penalties, killfeed behavior, and more.
+
+## **Usage**
+To integrate and use this script in your mission, simply add the script files to your main mission folder and ensure the CBA settings are configured to your preference.
+
 # Script Summary: arma3mercenaries Killfeed, Reward, and Death Marker System
 
 ## Overview
@@ -92,73 +159,4 @@ It applies to both **AI** and **player-controlled units** in an **Arma 3 mission
 ## Conclusion
 
 This comprehensive system is designed to enhance the tactical and immersive aspects of **arma3mercenaries missions** by rewarding or penalizing actions based on faction dynamics while also providing players with clear and immediate feedback through visual and audio notifications.
-
-
-
-# Enhanced Version Features
-
-# **arma3mercenaries Enhanced Kill Script: Kill Notification, Kill Reward, & Death Marker System**
-
-## **Overview**
-The `arma3mercenaries Enhanced Kill Script` provides comprehensive features for managing kill notifications (killfeed), rewards, penalties, and death markers in Arma 3 missions. The script supports a wide range of customizable options via CBA (Community Base Addons), enabling players and mission creators to tailor the experience to their needs.
-
-## **Core Features**
-
-### **Killfeed Notification**
-- **Description**: Displays a HUD notification for every kill, showing the name and distance of the killed unit.
-- **CBA Settings**:
-  - **Enable Killfeed**: Toggles the display of the killfeed notification.
-  - **Killfeed Display Duration**: Adjusts the duration (in seconds) that the killfeed notification remains on screen.
-  - **Enable Kill Notification Sound**: Toggles the sound notification that plays when a kill is registered.
-
-### **Rewards and Penalties**
-- **Friendly Fire Penalty**:
-  - **Description**: Deducts a specified amount of credits from the player’s bank account for friendly fire incidents.
-  - **CBA Settings**:
-    - **Friendly Fire Penalty (Bank)**: Sets the amount of credits deducted for friendly fire incidents.
-- **Friendly Fire Compensation**:
-  - **Description**: Awards a specified amount of credits to a player killed by friendly fire. Credits are added to the player’s bank account.
-  - **CBA Settings**:
-    - **Friendly Fire Compensation (Bank)**: Sets the amount of credits awarded to a player when killed by friendly fire.
-- **Kill Rewards**:
-  - **Description**: Awards a random amount of credits to the killer for killing enemy units.
-  - **CBA Settings**:
-    - **OPFOR Kill Reward (Random, Wallet)**: Sets the maximum random amount of credits awarded for killing an OPFOR unit.
-    - **NATO Kill Reward (Random, Wallet)**: Sets the maximum random amount of credits awarded for killing a NATO unit.
-    - **Independent Kill Reward (Random, Wallet)**: Sets the maximum random amount of credits awarded for killing an Independent unit.
-- **Kill Penalties**:
-  - **Description**: Deducts a specified amount of credits from the killer’s bank account for killing certain units, such as civilians or allied Independents.
-  - **CBA Settings**:
-    - **NATO Penalty for Killing Independent (Bank)**: Sets the amount of credits deducted for killing an Independent unit as NATO.
-    - **Civilian Kill Penalty (Bank)**: Sets the amount of credits deducted for killing a civilian.
-
-### **AI Wallet Management**
-- **Description**: Adds a random amount of credits to the wallets of killed AI units, making them lootable.
-- **CBA Settings**:
-  - **OPFOR AI Wallet Amount (Random, Wallet)**: Sets the maximum random amount of credits found on a killed OPFOR AI unit.
-  - **NATO AI Wallet Amount (Random, Wallet)**: Sets the maximum random amount of credits found on a killed NATO AI unit.
-  - **Independent AI Wallet Amount (Random, Wallet)**: Sets the maximum random amount of credits found on a killed Independent AI unit.
-  - **Civilian AI Wallet Amount (Random, Wallet)**: Sets the maximum random amount of credits found on a killed Civilian AI unit.
-
-### **Death Markers**
-- **Description**: Creates markers on the map at the location where a player or AI unit was killed. The marker includes the faction, killer’s name, weapon used, and the distance.
-- **CBA Settings**:
-  - **Death Marker Size**: Sets the size of the death markers on the map.
-
-### **Death Penalty**
-- **Description**: Deducts a specified amount of credits from the player's bank account upon death.
-- **CBA Settings**:
-  - **Death Penalty Amount (Bank)**: Sets the amount of credits deducted when the player dies.
-
-### **Silent Hints**
-- **Description**: Provides notifications related to rewards and penalties without disrupting gameplay with loud hints.
-- **CBA Settings**:
-  - **Enable Silent Hints**: Toggles the display of silent hints related to kill rewards and penalties.
-
-## **In-Game Experience**
-- **Immersive Feedback**: Players receive immediate visual and audio feedback for their kills and deaths, enhancing the tactical experience.
-- **Customization**: With the extensive CBA settings, mission creators and players can fine-tune how the script interacts with their gameplay, including adjusting rewards, penalties, killfeed behavior, and more.
-
-## **Usage**
-To integrate and use this script in your mission, simply add the script files to your main mission folder and ensure the CBA settings are configured to your preference.
 
