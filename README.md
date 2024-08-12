@@ -1,3 +1,5 @@
+**Enhanced Version Here!:** (https://github.com/BrianV1981/arma3mercenaries_kill/tree/kill_Enhanced)
+
 # Script Summary: arma3mercenaries Killfeed, Reward, and Death Marker System
 
 ## Overview
