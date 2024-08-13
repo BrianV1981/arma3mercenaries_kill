@@ -266,14 +266,12 @@ addMissionEventHandler ["entityKilled", {
             };
         };
 
-        // Killfeed HUD Notification and Sound
-        if (isPlayer _instigator) then {
-            _kill_HUD = format["<t size='0.3'>  Killed  <t size='0.5'> <t color='%1'>  %2  <t color='#%1'>  %3 m</t>", _killed_Color, _killed_Name, floor _distance];
-            [_kill_HUD, 0, 0, 8, 1, -1, 7017] spawn bis_fnc_dynamicText;
+        // Killfeed HUD Notification
+        _kill_HUD = format["<t size='0.3'>  Killed  <t size='0.5'> <t color='%1'>  %2  <t color='#%1'>  %3 m</t>", _killed_Color, _killed_Name, floor _distance];
+        [_kill_HUD, 0, 0, 8, 1, -1, 7017] spawn bis_fnc_dynamicText;
 
-            // Play a sound notification
-            playSound "Killfeed_notification";
-        };
+        // Play a sound notification
+        playSound "Killfeed_notification";
 
         // AI Death Marker - Only if the killer is a player
         if (!isPlayer _killed && isPlayer _instigator) then {
