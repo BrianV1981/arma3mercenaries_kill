@@ -1,0 +1,1 @@
+execVM "scripts\kill\arma3mercenaries_kill_XEHCfg.sqf";
