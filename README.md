@@ -32,15 +32,19 @@
       """--...  ___"""""-----......._______......----"""     --"""
                     """"       ---.....   ___....----
 
-## <details>
-  <summary>Overview</summary>
+## Overview
+
+<details>
+  <summary>Click to expand</summary>
 
   The `arma3mercenaries Enhanced Kill Script` provides comprehensive features for managing kill notifications (killfeed), rewards, penalties, and death markers in Arma 3 missions. The script supports a wide range of customizable options via CBA (Community Base Addons), enabling players and mission creators to tailor the experience to their needs.
 
 </details>
 
-## <details>
-  <summary>Core Features</summary>
+## Core Features
+
+<details>
+  <summary>Click to expand</summary>
 
 ### **Killfeed Notification**
 - **Description**: Displays a HUD notification for every kill, showing the name and distance of the killed unit.
@@ -95,23 +99,29 @@
 
 </details>
 
-## <details>
-  <summary>In-Game Experience</summary>
+## In-Game Experience
+
+<details>
+  <summary>Click to expand</summary>
 
 - **Immersive Feedback**: Players receive immediate visual and audio feedback for their kills and deaths, enhancing the tactical experience.
 - **Customization**: With the extensive CBA settings, mission creators and players can fine-tune how the script interacts with their gameplay, including adjusting rewards, penalties, killfeed behavior, and more.
 
 </details>
 
-## <details>
-  <summary>Usage</summary>
+## Usage
+
+<details>
+  <summary>Click to expand</summary>
 
 To integrate and use this script in your mission, simply add the script files to your main mission folder and ensure the CBA settings are configured to your preference.
 
 </details>
 
-## <details>
-  <summary>Script Summary</summary>
+## Script Summary
+
+<details>
+  <summary>Click to expand</summary>
 
 ### Overview
 
@@ -180,8 +190,10 @@ It applies to both **AI** and **player-controlled units** in an **Arma 3 mission
 
 </details>
 
-## <details>
-  <summary>Additional Features</summary>
+## Additional Features
+
+<details>
+  <summary>Click to expand</summary>
 
 ### **Killfeed HUD Notification**
 - A visual **HUD notification** is displayed for every kill, showing the name and distance of the killed unit.
@@ -200,8 +212,10 @@ It applies to both **AI** and **player-controlled units** in an **Arma 3 mission
 
 </details>
 
-## <details>
-  <summary>In-Game Experience</summary>
+## In-Game Experience
+
+<details>
+  <summary>Click to expand</summary>
 
 * **Rewards and Penalties**: Players and AI units receive **financial rewards** or **penalties** based on their actions, such as killing enemy units, committing friendly fire, or killing civilians.
 * **Killfeed**: Players receive **immediate visual feedback** about their kills through HUD notifications, enhancing the gameplay experience.
@@ -210,8 +224,10 @@ It applies to both **AI** and **player-controlled units** in an **Arma 3 mission
 
 </details>
 
-## <details>
-  <summary>Conclusion</summary>
+## Conclusion
+
+<details>
+  <summary>Click to expand</summary>
 
 This comprehensive system is designed to enhance the tactical and immersive aspects of **arma3mercenaries missions** by rewarding or penalizing actions based on faction dynamics while also providing players with clear and immediate feedback through visual and audio notifications.
 
