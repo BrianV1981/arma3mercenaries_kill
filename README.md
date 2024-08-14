@@ -1,4 +1,5 @@
 # **arma3mercenaries Enhanced Kill Script: Kill Notification, Kill Reward, & Death Marker System**
+![arma3mercenaries_v1.webp](arma3mercenaries_v1.webp)
 
                      __..-----')
          ,.--._ .-'_..--...-'
@@ -17,10 +18,10 @@
                       (#///)
                        \#///\
                        (##///)
-                       (##///)
-                       (##///)
-                       (##///)
-                        \##///\
+                       (BV///)
+                       (+#///)
+                       (JL///)
+                        \=#///\
                         (ANV///)
                         (IRV///)
                         (MWV////)__...-----....__
