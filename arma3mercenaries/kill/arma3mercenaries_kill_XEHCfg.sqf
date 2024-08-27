@@ -1,5 +1,4 @@
 /*
-
  rename and make this your XEH_postInit.sqf and put it in your main mission folder...
  
  ...or,
@@ -149,7 +148,37 @@ if (isServer) then {
 ] call CBA_fnc_addSetting;
 
 [
-    "arma3mercenaries_markerSize", // Internal setting name
+    "arma3mercenaries_killMarkerEnabled", // Internal setting name
+    "CHECKBOX", // setting type
+    ["Enable Kill Markers", "Toggles the creation of kill markers on the map."], // Pretty name and description
+    "arma3mercenaries", // Category
+    true, // default value
+    1, // "_isGlobal" flag
+    {} // function that will be executed once on mission start and every time the setting is changed.
+] call CBA_fnc_addSetting;
+
+[
+    "arma3mercenaries_killMarkerSize", // Internal setting name
+    "SLIDER", // setting type
+    ["Kill Marker Size", "Set the size of the kill markers on the map."], // Pretty name and description
+    "arma3mercenaries", // Category
+    [0.1, 2, 0.5, 0.1], // data for this setting: [min, max, default, step size]
+    1, // "_isGlobal" flag
+    {} // function that will be executed once on mission start and every time the setting is changed.
+] call CBA_fnc_addSetting;
+
+[
+    "arma3mercenaries_deathMarkerEnabled", // Internal setting name
+    "CHECKBOX", // setting type
+    ["Enable Death Markers", "Toggles the creation of death markers on the map."], // Pretty name and description
+    "arma3mercenaries", // Category
+    true, // default value
+    1, // "_isGlobal" flag
+    {} // function that will be executed once on mission start and every time the setting is changed.
+] call CBA_fnc_addSetting;
+
+[
+    "arma3mercenaries_deathMarkerSize", // Internal setting name
     "SLIDER", // setting type
     ["Death Marker Size", "Set the size of the death markers on the map."], // Pretty name and description
     "arma3mercenaries", // Category
@@ -182,6 +211,36 @@ if (isServer) then {
     "arma3mercenaries_killFeedEnabled", // Internal setting name
     "CHECKBOX", // setting type
     ["Enable Killfeed", "Toggles the display of the killfeed notification."], // Pretty name and description
+    "arma3mercenaries", // Category
+    true, // default value
+    1, // "_isGlobal" flag
+    {} // function that will be executed once on mission start and every time the setting is changed.
+] call CBA_fnc_addSetting;
+
+[
+    "arma3mercenaries_globalKillMarker", // Internal setting name
+    "CHECKBOX", // setting type
+    ["Enable Global Kill Marker Notifications", "Toggles the display of kill marker notifications in the global side chat."], // Pretty name and description
+    "arma3mercenaries", // Category
+    false, // default value
+    1, // "_isGlobal" flag
+    {} // function that will be executed once on mission start and every time the setting is changed.
+] call CBA_fnc_addSetting;
+
+[
+    "arma3mercenaries_globalDeathMarker", // Internal setting name
+    "CHECKBOX", // setting type
+    ["Enable Global Death Marker Notifications", "Toggles the display of death marker notifications in the global side chat."], // Pretty name and description
+    "arma3mercenaries", // Category
+    false, // default value
+    1, // "_isGlobal" flag
+    {} // function that will be executed once on mission start and every time the setting is changed.
+] call CBA_fnc_addSetting;
+
+[
+    "arma3mercenaries_unconsciousMarkerEnabled", // Internal setting name
+    "CHECKBOX", // setting type
+    ["Enable Unconscious Marker", "Toggles the creation of markers for unconscious players on the map."], // Pretty name and description
     "arma3mercenaries", // Category
     true, // default value
     1, // "_isGlobal" flag

@@ -125,8 +125,8 @@ class CfgSettings {
                 values[] = {0, 100000}; // Min: 0 credits, Max: 100000 credits
             };
 
-            // Marker Size
-            class markerSize {
+            // Death Marker Size
+            class deathMarkerSize {
                 title = "Death Marker Size";
                 description = "Sets the size of the death markers on the map.";
                 typeName = "NUMBER";
@@ -134,7 +134,16 @@ class CfgSettings {
                 values[] = {0.1, 2}; // Min: 0.1, Max: 2
             };
 
-            // Kill Notification Sound Toggle
+            // Kill Marker Size
+            class killMarkerSize {
+                title = "Kill Marker Size";
+                description = "Sets the size of the kill markers on the map.";
+                typeName = "NUMBER";
+                value = 0.5; // Default value
+                values[] = {0.1, 2}; // Min: 0.1, Max: 2
+            };
+
+            // Enable Kill Notification Sound
             class killNotificationSound {
                 title = "Enable Kill Notification Sound";
                 description = "Toggles the sound notification that plays when a kill is registered.";
@@ -142,7 +151,7 @@ class CfgSettings {
                 value = 1; // Default value: 1 (enabled)
             };
 
-            // Silent Hints Toggle
+            // Enable Silent Hints
             class silentHints {
                 title = "Enable Silent Hints";
                 description = "Toggles the display of silent hints related to kill rewards and penalties.";
@@ -150,10 +159,50 @@ class CfgSettings {
                 value = 1; // Default value: 1 (enabled)
             };
 
-            // Killfeed Enabled Toggle
+            // Enable Killfeed
             class killFeedEnabled {
                 title = "Enable Killfeed";
                 description = "Toggles the display of the killfeed notification.";
+                typeName = "BOOL";
+                value = 1; // Default value: 1 (enabled)
+            };
+
+            // Enable Death Markers
+            class deathMarkerEnabled {
+                title = "Enable Death Markers";
+                description = "Toggles the creation of death markers on the map.";
+                typeName = "BOOL";
+                value = 1; // Default value: 1 (enabled)
+            };
+
+            // Enable Kill Markers
+            class killMarkerEnabled {
+                title = "Enable Kill Markers";
+                description = "Toggles the creation of kill markers on the map.";
+                typeName = "BOOL";
+                value = 1; // Default value: 1 (enabled)
+            };
+
+            // Enable Global Kill Marker Notifications
+            class globalKillMarker {
+                title = "Enable Global Kill Marker Notifications";
+                description = "Toggles the display of kill marker notifications in the global side chat.";
+                typeName = "BOOL";
+                value = 1; // Default value: 1 (enabled)
+            };
+
+            // Enable Global Death Marker Notifications
+            class globalDeathMarker {
+                title = "Enable Global Death Marker Notifications";
+                description = "Toggles the display of death marker notifications in the global side chat.";
+                typeName = "BOOL";
+                value = 1; // Default value: 1 (enabled)
+            };
+			
+			// Enable Unconscious Marker
+			class unconsciousMarkerEnabled {
+                title = "Enable Unconscious Marker";
+                description = "Toggles the creation of markers for unconscious players on the map.";
                 typeName = "BOOL";
                 value = 1; // Default value: 1 (enabled)
             };
