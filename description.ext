@@ -1,0 +1,8 @@
+class CfgSounds {
+ 
+    class Killfeed_notification {
+        name = "Kill_notification";
+        sound[] = {"arma3mercenaries\kill\kill_notification_sounds\kill_notification.ogg", db-5, 1.0};
+        titles[] = {};
+    };
+};
