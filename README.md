@@ -36,7 +36,11 @@
 <details>
   <summary>Overview</summary>
 
-  The `arma3mercenaries Enhanced Kill Script` provides comprehensive features for managing kill notifications (killfeed), rewards, penalties, and death markers in Arma 3 missions. The script supports a wide range of customizable options via CBA (Community Base Addons), enabling players and mission creators to tailor the experience to their needs.
+  The `arma3mercenaries Enhanced Kill Script` provides comprehensive features for managing kill notifications (killfeed), rewards, penalties, and death markers in Arma 3 missions. The script supports a wide range of customizable options via CBA (Community Base Addons), enabling players and mission creators to tailor the experience to their needs. 
+
+  **Dependencies:**
+  - **CBA (Community Base Addons)**: Required for the enhanced version.
+  - **ACE (Advanced Combat Environment)**: Optional, for the unconscious marker functionality.
 
 </details>
 
@@ -94,6 +98,15 @@
 - **CBA Settings**:
   - **Enable Silent Hints**: Toggles the display of silent hints related to kill rewards and penalties.
 
+### **Unconscious Marker**
+- **Description**: Creates a yellow marker on the map when a player is knocked unconscious (requires ACE).
+- **Functionality**:
+  - The marker is created only if the unconscious marker feature is enabled.
+  - If the player regains consciousness or dies, the marker is removed.
+  - A system chat message is sent when a player is knocked unconscious, and the marker is created.
+- **CBA Settings**:
+  - **Enable Unconscious Marker**: Toggles the creation of markers for unconscious players on the map.
+
 </details>
 
 <details>
@@ -101,6 +114,7 @@
 
 - **Immersive Feedback**: Players receive immediate visual and audio feedback for their kills and deaths, enhancing the tactical experience.
 - **Customization**: With the extensive CBA settings, mission creators and players can fine-tune how the script interacts with their gameplay, including adjusting rewards, penalties, killfeed behavior, and more.
+- **Unconscious Marker**: If enabled, players knocked unconscious will have their position marked with a yellow icon, providing teammates with immediate information about their status.
 
 </details>
 
@@ -108,6 +122,11 @@
   <summary>Usage</summary>
 
 To integrate and use this script in your mission, simply add the script files to your main mission folder and ensure the CBA settings are configured to your preference.
+
+### **Money System Toggle**
+- **Description**: The script allows toggling between two money systems: `grad_moneymenu` and `HG_fnc_addOrSubCash`. This can be configured via CBA settings.
+- **CBA Settings**:
+  - **Use Grad Money System**: Toggles the use of the grad_moneymenu system for financial transactions. If disabled, the script defaults to HG_fnc_addOrSubCash.
 
 </details>
 
@@ -182,32 +201,13 @@ It applies to both **AI** and **player-controlled units** in an **Arma 3 mission
 </details>
 
 <details>
-  <summary>Additional Features</summary>
-
-### **Killfeed HUD Notification**
-- A visual **HUD notification** is displayed for every kill, showing the name and distance of the killed unit.
-
-### **Sound Notification**
-- A **sound** is played whenever a kill is registered.
-
-### **AI Death Marker**
-- A **death marker** is placed on the map for the last AI unit killed by a player. The marker’s color corresponds to the side of the killed unit, and the label includes the faction name, killer’s name, weapon used, and distance.
-
-### **Player Death Marker**
-- If a player is killed, a **red warning marker** is placed on the map at their death location, displaying the player’s name.
-
-### **Death Penalty**
-- If a player dies, they receive a **financial penalty** of 10,000 credits deducted from their bank account, and a hint is displayed informing them of the deduction.
-
-</details>
-
-<details>
   <summary>In-Game Experience</summary>
 
 * **Rewards and Penalties**: Players and AI units receive **financial rewards** or **penalties** based on their actions, such as killing enemy units, committing friendly fire, or killing civilians.
 * **Killfeed**: Players receive **immediate visual feedback** about their kills through HUD notifications, enhancing the gameplay experience.
 * **Death Markers**: Markers placed on the map provide visual cues for the locations of recent kills, helping players track significant events during the mission.
 * **Death Penalty**: Players face **financial consequences** for dying, encouraging more careful and strategic gameplay.
+* **Unconscious Marker**: If enabled, this marker helps teammates locate and assist unconscious players, enhancing team coordination.
 
 </details>
 
