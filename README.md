@@ -119,18 +119,6 @@
 </details>
 
 <details>
-  <summary>Usage</summary>
-
-To integrate and use this script in your mission, simply add the script files to your main mission folder and ensure the CBA settings are configured to your preference.
-
-### **Money System Toggle**
-- **Description**: The script allows toggling between two money systems: `grad_moneymenu` and `HG_fnc_addOrSubCash`. This can be configured via CBA settings.
-- **CBA Settings**:
-  - **Use Grad Money System**: Toggles the use of the grad_moneymenu system for financial transactions. If disabled, the script defaults to HG_fnc_addOrSubCash.
-
-</details>
-
-<details>
   <summary>Script Summary</summary>
 
 ### Overview
@@ -209,6 +197,12 @@ It applies to both **AI** and **player-controlled units** in an **Arma 3 mission
 * **Death Penalty**: Players face **financial consequences** for dying, encouraging more careful and strategic gameplay.
 * **Unconscious Marker**: If enabled, this marker helps teammates locate and assist unconscious players, enhancing team coordination.
 
+</details>
+
+<details>
+  <summary>Usage</summary>
+
+To integrate and use this script in your mission, simply add the script files to your main mission folder and ensure the CBA settings are configured to your preference.
 </details>
 
 <details>
